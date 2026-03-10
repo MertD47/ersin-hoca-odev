@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Macht | Profile</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Tasarım Ayarları */
+        :root {
+            --navy-dark: #0f172a;
+            --navy-card: #1e293b;
+            --slate-gray: #94a3b8;
+            --suits-blue: #1e40af;
+            --suits-blue-hover: #2563eb;
+            --silver: #e2e8f0;
+        }
+
+        body {
+            background-color: var(--navy-dark);
+            background-image: radial-gradient(at 0% 0%, rgba(30, 64, 175, 0.15) 0px, transparent 50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--silver);
+        }
+
+        /* Profil Kartı */
+        .profile-card {
+            background-color: var(--navy-card);
+            width: 340px;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Profil Resmi */
+        .image-wrapper {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            filter: grayscale(20%);
+            transition: filter 0.3s ease;
+        }
+
+        .profile-card:hover .profile-img {
+            filter: grayscale(0%);
+        }
+
+        /* Tipografi */
+        .name {
+            font-size: 2rem;
+            margin: 10px 0 5px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            color: var(--slate-gray);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        /* Bio Alanı */
+        .bio-content {
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quote {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .action-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--suits-blue), #1e3a8a);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
+        }
+
+        .action-link:hover {
+            background: linear-gradient(135deg, var(--suits-blue-hover), var(--suits-blue));
+            box-shadow: 0 8px 20px rgba(30, 64, 175, 0.6);
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <div class="image-wrapper">
+            <img src="gabriel match.jpg" alt="Gabriel Macht" class="profile-img">
+        </div>
+
+        <h2 class="name">Gabriel Macht</h2>
+        <p class="subtitle">Actor & Producer</p>
+
+        <div class="bio-content">
+            <p class="quote">"I don't have lucky streaks, I pay my luck."</p>
+            <a href="https://www.imdb.com/name/nm0532683/" target="_blank" class="action-link">
+                <i class="fa-solid fa-gavel"></i> View Portfolio
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
