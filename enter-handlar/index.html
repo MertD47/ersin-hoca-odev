@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Yapılacaklar Listesi</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome (Çöp kutusu ikonu için CDN linki) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="kapsayici">
+        <div class="icerik-alani">
+            <!-- SOl SÜTUN: Veri Girişi ve İstatistikler -->
+            <div class="sol-sutun">
+                <h2>Yapılacaklar Listesi 📝</h2>
+
+                <!-- İstatistik Alanı -->
+                <div class="istatistikler" id="istatistikler" style="display: none;">
+                    <span id="toplam-gorev">Toplam: 0</span>
+                    <span id="tamamlanan-gorev">Tamamlanan: 0</span>
+                </div>
+
+                <div class="giris-alani">
+                    <input type="text" id="veri-kutusu" placeholder="Bugün ne yapacaksın?">
+                    <select id="oncelik-secimi" class="oncelik-secimi">
+                        <option value="1">Düşük Öncelik 🍃</option>
+                        <option value="2" selected>Orta Öncelik ⚡</option>
+                        <option value="3">Yüksek Öncelik 🔥</option>
+                    </select>
+                    <button onclick="elemanEkle()" id="ekle-butonu">Ekle</button>
+                </div>
+
+                <!-- Ağaç Animasyon Alanı -->
+                <div class="agac-kapsayici" id="agac-kapsayici">
+                    <div class="agac-govde" id="agac-govde">
+                        <!-- Adam Asmaca Dalı -->
+                        <div class="agac-dali" id="agac-dali">
+                            <div class="adam-asmaca" id="adam-asmaca">
+                                <div class="parca ip" id="adam-ip"></div>
+                                <div class="parca kafa" id="adam-kafa"></div>
+                                <div class="govde-merkez">
+                                    <div class="parca govde" id="adam-govde"></div>
+                                    <div class="parca kol sol-kol" id="adam-sol-kol"></div>
+                                    <div class="parca kol sag-kol" id="adam-sag-kol"></div>
+                                    <div class="parca bacak sol-bacak" id="adam-sol-bacak"></div>
+                                    <div class="parca bacak sag-bacak" id="adam-sag-bacak"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="agac-yapraklari" id="agac-yapraklari"></div>
+                </div>
+            </div>
+
+            <!-- SAĞ SÜTUN: Liste ve Sayfalama -->
+            <div class="sag-sutun">
+                <!-- Listemiz buraya dinamik olarak eklenecek -->
+                <ul id="liste">
+                </ul>
+
+                <!-- Sayfalama (Pagination) Kontrolleri -->
+                <div class="sayfalama-alani" id="sayfalama" style="display: none;">
+                    <button id="onceki-btn" onclick="sayfaDegistir(-1)"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <span id="sayfa-bilgisi">1 / 1</span>
+                    <button id="sonraki-btn" onclick="sayfaDegistir(1)"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
