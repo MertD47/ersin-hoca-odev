@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon SaaS Pricing</title>
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --card-bg: #16161a;
+            --neon-blue: #00d2ff;
+            --neon-purple: #9d50bb;
+            --text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            font-family: 'Poppins', sans-serif;
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* FLEXBOX AYARLARI */
+        .pricing-wrapper {
+            display: flex;
+            flex-direction: row; /* Masaüstü: Yan yana */
+            gap: 40px;
+            padding: 20px;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            width: 320px;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            position: relative;
+            transition: all 0.5s ease;
+            border: 1px solid #222;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        /* MAVİ VE MOR GRADIENT GEÇİŞLERİ */
+        .card:hover {
+            transform: translateY(-20px) rotateX(10deg);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+        }
+
+        /* ORTADAKİ ÖNE ÇIKAN KART (Farklı Renk ve Glow) */
+        .card.featured {
+            border-color: var(--neon-purple);
+            transform: scale(1.1);
+            z-index: 10;
+            background: linear-gradient(145deg, #16161a, #1f1f26);
+        }
+
+        .card.featured:hover {
+            box-shadow: 0 0 50px rgba(157, 80, 187, 0.4);
+        }
+
+        /* FİYAT VE BAŞLIK */
+        h2 { font-size: 1.5rem; margin-bottom: 10px; opacity: 0.7; }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+            background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* LİSTE */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            flex-grow: 1;
+        }
+
+        li {
+            padding: 12px 0;
+            color: #aaa;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #222;
+        }
+
+        /* BUTON (PARLAYAN EFEKT) */
+        .btn {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--neon-blue);
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .featured .btn {
+            border-color: var(--neon-purple);
+            background: var(--neon-purple);
+        }
+
+        .btn:hover {
+            background: var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue);
+            color: black;
+        }
+
+        /* MOBİL AYARLAR */
+        @media (max-width: 968px) {
+            .pricing-wrapper {
+                flex-direction: column; /* Mobil: Alt alta */
+                align-items: center;
+                padding-top: 100px;
+            }
+            .card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pricing-wrapper">
+        <div class="card">
+            <h2>Başlangıç</h2>
+            <div class="price">₺199</div>
+            <ul>
+                <li>10 Proje Hakkı</li>
+                <li>Temel İstatistikler</li>
+                <li>E-Posta Desteği</li>
+            </ul>
+            <button class="btn">Satın Al</button>
+        </div>
+
+        <div class="card featured">
+            <h2>Profesyonel</h2>
+            <div class="price">₺499</div>
+            <ul>
+                <li>Sınırsız Proje</li>
+                <li>Yapay Zeka Analizi</li>
+                <li>7/24 Canlı Destek</li>
+                <li>Özel API Erişimi</li>
+            </ul>
+            <button class="btn">Hemen Başla</button>
+        </div>
+
+        <div class="card">
+            <h2>Kurumsal</h2>
+            <div class="price">₺999</div>
+            <ul>
+                <li>Tüm Özellikler</li>
+                <li>Özel Sunucu</li>
+                <li>Sınırsız Depolama</li>
+            </ul>
+            <button class="btn">İletişime Geç</button>
+        </div>
+    </div>
+
+</body>
+</html>
